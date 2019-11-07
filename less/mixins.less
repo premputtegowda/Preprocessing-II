@@ -11,10 +11,28 @@
     
 }
 
-.primary-btn(){
-    width:80%;
+.primary-btn(@width:80%){
+    width:@width;
     background:@button-bg;
     border-radius: 8px;
     padding:4%;
     text-align: center;
 }
+
+
+@keyframes bganimation {
+    0% {background:@bg-start-color;
+        display: none; }
+    
+    100% {background:@bg-end-color;
+            display: visible; }
+}
+
+
+
+
+.animation(@name,@duration,@count) {
+
+    animation: @name @duration @count;
+}
+

@@ -1,10 +1,16 @@
-@import "variables";
-@import "mixins";
 
-@mobile: ~"(max-width: 500px)";
+//@mobile: ~"(max-width: 500px)";
+
 
 .home {
-  
+
+  .main-content {
+    border-bottom: 2px dashed @navigation-border;
+
+    
+  }
+
+ 
   @media @mobile{ //media begin
     
     padding: 5%;
@@ -16,9 +22,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    
 
     @media @mobile{ //media begin
       flex-direction:column;
+      
       
     }
    
@@ -112,6 +120,8 @@
     @media @mobile{ //media begin
       flex-direction: column;
       align-items: center;
+      justify-content: center;
+      padding:2%;
       
     }//media end
 
@@ -123,7 +133,59 @@
         width:100%;
         padding: 5% 10%;
         
+        
       }//media end
     }
+  }
+
+  //contact
+  .contact-form {//section begin
+
+    text-align: center;
+    padding:5%;
+    border-top: 2px dashed @navigation-border;
+    form {
+      
+      .custom-layout(center, center, @flex-direction: row);
+      flex-wrap:wrap;
+      font-size:1.6rem;
+      
+    
+
+      .half {
+        text-align: left;
+        width:50%;
+        padding: 2%;
+        @media @mobile{ //media begin
+          width:100%;
+          
+          
+        }//media end
+      }
+
+      .full {
+
+        width:100%;
+        text-align: left;
+        padding:2%;
+
+       
+
+      }
+
+      input[type=text],input[type=phone],input[type=email],textarea {
+        width:100%;
+        border: 1px solid grey;
+        margin:2% 0%;
+        height:25px;
+      }
+      .btn{
+        .primary-btn(50%);
+        padding:2%;
+      }
+    }
+
+    
+    
   }
 }// home

@@ -1,4 +1,14 @@
 @import "variables";
+@keyframes bganimation {
+  0% {
+    background: #2C3539;
+    display: none;
+  }
+  100% {
+    background: #FFFFFF;
+    display: visible;
+  }
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -137,6 +147,9 @@ html,
 body {
   font-family: 'Roboto', sans-serif;
 }
+body {
+  animation: bganimation 10s 1;
+}
 h1,
 h2,
 h3,
@@ -176,12 +189,29 @@ img {
   padding: 4%;
   text-align: center;
 }
+@keyframes mymove {
+  0% {
+    top: 0px;
+  }
+  25% {
+    top: 200px;
+  }
+  75% {
+    top: 50px;
+  }
+  100% {
+    top: 100px;
+  }
+}
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  border-bottom: 1px dotted grey;
+  border-bottom: 2px dashed #C0C0C0;
+}
+header h2 {
+  animation: mymove 5s 1 ease-in;
 }
 @media (max-width: 500px) {
   header {
@@ -208,7 +238,7 @@ header nav {
 header nav a {
   text-decoration: none;
   color: black;
-  font-size: 1.6 rem;
+  font-size: 1.6rem;
 }
 .footer {
   width: 100%;
@@ -220,6 +250,9 @@ header nav a {
   color: #212529;
   font-size: 1.6rem;
   padding: 20px;
+}
+.home .main-content {
+  border-bottom: 2px dashed #C0C0C0;
 }
 @media (max-width: 500px) {
   .home {
@@ -312,6 +345,8 @@ header nav a {
   .home .content-pick {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding: 2%;
   }
 }
 .home .content-pick .destination {
@@ -323,4 +358,49 @@ header nav a {
     width: 100%;
     padding: 5% 10%;
   }
+}
+.home .contact-form {
+  text-align: center;
+  padding: 5%;
+  border-top: 2px dashed #C0C0C0;
+}
+.home .contact-form form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 1.6rem;
+}
+.home .contact-form form .half {
+  text-align: left;
+  width: 50%;
+  padding: 2%;
+}
+@media (max-width: 500px) {
+  .home .contact-form form .half {
+    width: 100%;
+  }
+}
+.home .contact-form form .full {
+  width: 100%;
+  text-align: left;
+  padding: 2%;
+}
+.home .contact-form form input[type=text],
+.home .contact-form form input[type=phone],
+.home .contact-form form input[type=email],
+.home .contact-form form textarea {
+  width: 100%;
+  border: 1px solid grey;
+  margin: 2% 0%;
+  height: 25px;
+}
+.home .contact-form form .btn {
+  width: 50%;
+  background: #17A2B8;
+  border-radius: 8px;
+  padding: 4%;
+  text-align: center;
+  padding: 2%;
 }
