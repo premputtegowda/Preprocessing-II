@@ -1,1 +1,20 @@
+@import"variables";
+
+@mobile: ~"(max-width: 500px)";
+
 // Mixins in here
+.custom-layout(@justify, @align,@flex-direction: row){
+    display: flex;
+    justify-content: @justify;
+    align-items: @align;
+    flex-direction: @flex-direction;
+    
+}
+
+.primary-btn(){
+    width:80%;
+    background:@button-bg;
+    border-radius: 8px;
+    padding:4%;
+    text-align: center;
+}
