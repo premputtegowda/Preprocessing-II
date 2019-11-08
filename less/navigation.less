@@ -1,1 +1,46 @@
+
+
 // Navigation Styles here
+
+@keyframes mymove{
+    // 0% {.custom-layout(space-between, center);}
+    // 25%{.custom-layout(center, center);}
+    // 50%{.custom-layout(flex-end, center);}
+    // 75%{.custom-layout(space-between, center);}
+    // 100%{.custom-layout(space-between, center);}
+    0%   {top: 0px;}
+    25%  {top: 200px;}
+   75%  {top: 50px}
+   100% {top: 100px;}
+}
+
+
+header { //header begin
+    .custom-layout(space-between, center);
+    border-bottom: 2px dashed @navigation-border;
+    h2{
+        animation: mymove 5s 1 ease-in;
+    }
+    
+    @media @mobile {
+        .custom-layout(space-around, center,column);
+        padding:3%;
+        width:100%;   
+    }
+  
+    nav { //nav begin
+        .custom-layout(space-between, center);
+        width:50%;
+        @media @mobile { //mobile view
+            width:100%; 
+        }//mobile view end
+       a {
+           text-decoration:none;
+           color: black;
+           font-size: 1.6rem;
+       }
+    }
+    
+    
+}
+

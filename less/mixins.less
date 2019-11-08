@@ -1,1 +1,38 @@
+@import"variables";
+
+@mobile: ~"(max-width: 500px)";
+
 // Mixins in here
+.custom-layout(@justify, @align,@flex-direction: row){
+    display: flex;
+    justify-content: @justify;
+    align-items: @align;
+    flex-direction: @flex-direction;
+    
+}
+
+.primary-btn(@width:80%){
+    width:@width;
+    background:@button-bg;
+    border-radius: 8px;
+    padding:4%;
+    text-align: center;
+}
+
+
+@keyframes bganimation {
+    0% {background:@bg-start-color;
+        display: none; }
+    
+    100% {background:@bg-end-color;
+            display: visible; }
+}
+
+
+
+
+.animation(@name,@duration,@count) {
+
+    animation: @name @duration @count;
+}
+
